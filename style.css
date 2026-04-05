@@ -186,12 +186,20 @@ nav {
   z-index: 1;
 }
 .hero-photo {
-  width: min(100%, 420px);
-  max-height: 80vh;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 2rem;
   box-shadow: 0 40px 90px rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+.hero-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 50%, rgba(255,215,0,0.1) 100%);
+  border-radius: 2rem;
+  pointer-events: none;
 }
 .play-ring {
   width: 160px; height: 160px;
@@ -317,6 +325,65 @@ section { padding: 7rem 3rem; }
   line-height: 1.7;
   color: var(--muted);
 }
+
+/* ── VIDEOS ── */
+.videos {
+  background: var(--bg);
+  padding: 7rem 0;
+}
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+.carousel-container {
+  width: 90%;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.5s ease;
+  width: calc(800px * 9); /* 9 videos */
+}
+.video-item {
+  flex: 0 0 800px;
+  background: var(--card);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+.video-item video {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+.video-title {
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--text);
+  text-align: center;
+}
+.carousel-btn {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: background 0.3s;
+}
+.carousel-btn:hover {
+  background: #c9a96e;
+}
+.carousel-btn.prev { order: -1; }
+.carousel-btn.next { order: 1; }
 
 /* ── COLLAB ── */
 .collab {

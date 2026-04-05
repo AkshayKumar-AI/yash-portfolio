@@ -111,3 +111,17 @@ async function submitContactForm() {
 
 /* Expose to HTML onclick */
 window.submitContactForm = submitContactForm;
+
+/* ── CAROUSEL ── */
+let currentIndex = 0;
+const track = document.querySelector('.carousel-track');
+const items = document.querySelectorAll('.video-item');
+const totalItems = items.length;
+
+function scrollCarousel(direction) {
+  currentIndex += direction;
+  if (currentIndex < 0) currentIndex = totalItems - 1;
+  if (currentIndex >= totalItems) currentIndex = 0;
+  const translateX = -currentIndex * (800 + 16); // 800px width + 1rem gap
+  track.style.transform = `translateX(${translateX}px)`;
+}
