@@ -52,7 +52,8 @@ const statObs = new IntersectionObserver(entries => {
       const el = e.target;
       const txt = el.textContent;
       if (txt.includes('400')) animCount(el, 400, '+');
-      else if (txt.includes('5')) animCount(el, 5, '+');
+      else if (txt.includes('2+')) animCount(el, 2, '+');
+      else if (txt.includes('100')) animCount(el, 100, '+');
       statObs.unobserve(el);
     }
   });
@@ -112,16 +113,18 @@ async function submitContactForm() {
 /* Expose to HTML onclick */
 window.submitContactForm = submitContactForm;
 
-/* ── CAROUSEL ── */
-let currentIndex = 0;
-const track = document.querySelector('.carousel-track');
-const items = document.querySelectorAll('.video-item');
-const totalItems = items.length;
+/* ── VIDEO GALLERY ── */
+const featuredVideo = document.getElementById('featuredVideo');
+const featuredSource = document.getElementById('featuredSource');
+const videoThumbs = document.querySelectorAll('.video-thumb');
 
-function scrollCarousel(direction) {
-  currentIndex += direction;
-  if (currentIndex < 0) currentIndex = totalItems - 1;
-  if (currentIndex >= totalItems) currentIndex = 0;
-  const translateX = -currentIndex * (800 + 16); // 800px width + 1rem gap
-  track.style.transform = `translateX(${translateX}px)`;
-}
+videoThumbs.forEach(button => {
+  button.addEventListener('click', () => {
+    videoThumbs.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+    featuredSource.src = button.dataset.src;
+    featuredSource.type = button.dataset.type;
+    featuredVideo.load();
+    featuredVideo.play().catch(() => {});
+  });
+});

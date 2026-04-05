@@ -43,11 +43,7 @@
   <div class="hero-right">
     <div class="hero-visual">
       <img src="yash.png" alt="Yash Akole" class="hero-photo">
-      <div class="play-ring">
-        <div class="play-btn">
-          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-        </div>
-      </div>
+      
     </div>
     <div class="hero-stats">
       <div class="stat">
@@ -55,11 +51,11 @@
         <div class="stat-label">Podcasts Shot</div>
       </div>
       <div class="stat">
-        <div class="stat-num">5+</div>
+        <div class="stat-num">2+</div>
         <div class="stat-label">Years Experience</div>
       </div>
       <div class="stat">
-        <div class="stat-num">∞</div>
+        <div class="stat-num">100+</div>
         <div class="stat-label">Reels Created</div>
       </div>
     </div>
@@ -128,107 +124,99 @@
 <section class="videos" id="videos">
   <div class="reveal">
     <div class="section-label">My Work</div>
-    <h2 class="section-title">VIDEOS &<br>REELS</h2>
+    <h2 class="section-title">VIDEO<br>SHOWCASE</h2>
   </div>
-  <div class="carousel">
-    <button class="carousel-btn prev" onclick="scrollCarousel(-1)">&#10094;</button>
-    <div class="carousel-container">
-      <div class="carousel-track">
-        <div class="video-item">
-          <video controls>
-            <source src="videos/long form/ar &cs 2 - HD 1080p (1).mov" type="video/quicktime">
-            Your browser does not support this video format.
-          </video>
-          <div class="video-title">Long Form Video 1 (MOV - may require QuickTime)</div>
-        </div>
-        <div class="video-item">
-          <video controls>
-            <source src="videos/long form/mr. cs & Ar - HD 1080p.mov" type="video/quicktime">
-            Your browser does not support this video format.
-          </video>
-          <div class="video-title">Long Form Video 2 (MOV - may require QuickTime)</div>
-        </div>
-        <div class="video-item">
-          <video controls>
-            <source src="videos/short form/Reel 4 - HD 1080p.mov" type="video/quicktime">
-            Your browser does not support this video format.
-          </video>
-          <div class="video-title">Reel 4 (MOV - may require QuickTime)</div>
-        </div>
-        <div class="video-item">
-          <video controls>
-            <source src="videos/short form/Video-311.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <div class="video-title">Video 311</div>
-        </div>
-        <div class="video-item">
-          <video controls>
-            <source src="videos/short form/reel 1 - HD 1080p.mov" type="video/quicktime">
-            Your browser does not support this video format.
-          </video>
-          <div class="video-title">Reel 1 (MOV - may require QuickTime)</div>
-        </div>
-        <div class="video-item">
-          <video controls>
-            <source src="videos/short form/reel 2 - HD 1080p.mov" type="video/quicktime">
-            Your browser does not support this video format.
-          </video>
-          <div class="video-title">Reel 2 (MOV - may require QuickTime)</div>
-        </div>
-        <div class="video-item">
-          <video controls>
-            <source src="videos/short form/reel 3 - HD 1080p.mov" type="video/quicktime">
-            Your browser does not support this video format.
-          </video>
-          <div class="video-title">Reel 3 (MOV - may require QuickTime)</div>
-        </div>
-        <div class="video-item">
-          <video controls>
-            <source src="videos/short form/reel 5 - HD 1080p.mov" type="video/quicktime">
-            Your browser does not support this video format.
-          </video>
-          <div class="video-title">Reel 5 (MOV - may require QuickTime)</div>
-        </div>
-        <div class="video-item">
-          <video controls>
-            <source src="videos/short form/reel 6 - HD 1080p.mov" type="video/quicktime">
-            Your browser does not support this video format.
-          </video>
-          <div class="video-title">Reel 6 (MOV - may require QuickTime)</div>
-        </div>
+  <div class="video-panel reveal">
+    <div class="video-display">
+      <div class="video-player">
+        <video id="featuredVideo" controls playsinline>
+          <source id="featuredSource" src="videos/short form/Video-311.mp4" type="video/mp4">
+          Your browser does not support this video tag.
+        </video>
+      </div>
+      <p class="video-note">Preview any clip from the gallery on the right.</p>
+    </div>
+    <div class="video-gallery">
+      <div class="gallery-label">Video Gallery</div>
+      <div class="video-thumb-grid">
+        <button class="video-thumb active" data-src="videos/short form/Video-311.mp4" data-type="video/mp4" aria-label="Video 311">
+          <span class="video-title">Video 311</span>
+        </button>
+        <button class="video-thumb" data-src="videos/short form/reel 1 - HD 1080p.mov" data-type="video/quicktime" aria-label="Reel 1">
+          <span class="video-title">Reel 1</span>
+        </button>
+        <button class="video-thumb" data-src="videos/short form/reel 2 - HD 1080p.mov" data-type="video/quicktime" aria-label="Reel 2">
+          <span class="video-title">Reel 2</span>
+        </button>
+        <button class="video-thumb" data-src="videos/short form/reel 3 - HD 1080p.mov" data-type="video/quicktime" aria-label="Reel 3">
+          <span class="video-title">Reel 3</span>
+        </button>
+        <button class="video-thumb" data-src="videos/short form/reel 5 - HD 1080p.mov" data-type="video/quicktime" aria-label="Reel 5">
+          <span class="video-title">Reel 5</span>
+        </button>
+        <button class="video-thumb" data-src="videos/short form/reel 6 - HD 1080p.mov" data-type="video/quicktime" aria-label="Reel 6">
+          <span class="video-title">Reel 6</span>
+        </button>
+        <button class="video-thumb" data-src="videos/long form/ar &cs 2 - HD 1080p (1).mov" data-type="video/quicktime" aria-label="AR and CS 2">
+          <span class="video-title">AR and CS 2</span>
+        </button>
+        <button class="video-thumb" data-src="videos/long form/mr. cs & Ar - HD 1080p.mov" data-type="video/quicktime" aria-label="Mr. CS & AR">
+          <span class="video-title">Mr. CS & AR</span>
+        </button>
       </div>
     </div>
-    <button class="carousel-btn next" onclick="scrollCarousel(1)">&#10095;</button>
   </div>
 </section>
 
 <!-- COLLAB -->
-<section id="collab" style="background: var(--bg);">
-  <div class="collab">
-    <div class="collab-text reveal">
-      <div class="section-label">Notable Collaboration</div>
-      <h2 class="section-title" style="font-size:clamp(2.5rem,4vw,4rem)">WORKING WITH<br>ANURAG RISHI</h2>
-      <div class="collab-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        Featured Creator Partnership
-      </div>
-      <blockquote class="collab-quote">
-        "Turning every physical event into a cinematic experience — from stage to screen."
-      </blockquote>
-      <p class="collab-detail">
-        Yash has been the trusted video editor and social media manager behind Anurag Rishi's brand.
-        From shooting and editing live physical events to managing his entire Instagram presence,
-        Yash ensures every piece of content is polished, on-brand, and audience-ready.
-        This ongoing collaboration spans across seminars, motivational events, and digital content strategy.
-      </p>
+<section id="collab" class="collab-section">
+  <div class="collab-header reveal">
+    <div class="section-label">Notable Collaborations</div>
+    <h2 class="section-title">FEATURED<br>YOUTUBE CREATORS</h2>
+    <div class="collab-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      10+ Creator Partnerships
     </div>
-    <div class="collab-visual reveal">
-      <div class="collab-card main">
-        <div class="event-tag">Live Event Coverage</div>
-        <div class="collab-name">ANURAG RISHI</div>
-        <div class="collab-role">Speaker · Author · Entrepreneur</div>
-        <div class="floating-tag">Ongoing Partnership</div>
+    <p class="collab-detail">
+      Yash has worked across India with top creators including Chitresh Soni, Deepak Dhaiya, Dr Shikha Sharma,
+      Ashish Agarwal and Anurag Rishi. Each collaboration blends cinematic storytelling, polished edits and a strong
+      YouTube-first content strategy.
+    </p>
+  </div>
+  <div class="collab-grid reveal">
+    <div class="collab-card">
+      <div class="collab-avatar"><img src="collab/chitresh-soni.jpg" alt="Chitresh Soni"></div>
+      <div class="collab-info">
+        <div class="collab-name">Chitresh Soni</div>
+        <div class="collab-role">Networking Coach</div>
+      </div>
+    </div>
+    <div class="collab-card">
+      <div class="collab-avatar"><img src="collab/deepak-dhaiya.jpg" alt="Deepak Dhaiya"></div>
+      <div class="collab-info">
+        <div class="collab-name">Deepak Dhaiya</div>
+        <div class="collab-role">Networking Coach</div>
+      </div>
+    </div>
+    <div class="collab-card">
+      <div class="collab-avatar"><img src="collab/shikha-sharma.jpg" alt="Dr Shikha Sharma"></div>
+      <div class="collab-info">
+        <div class="collab-name">Dr Shikha Sharma</div>
+        <div class="collab-role">Networking Coach</div>
+      </div>
+    </div>
+    <div class="collab-card">
+      <div class="collab-avatar"><img src="collab/ashish-agrawal.png" alt="Ashish Agarwal"></div>
+      <div class="collab-info">
+        <div class="collab-name">Ashish Agarwal</div>
+        <div class="collab-role">Lifestyle Coach</div>
+      </div>
+    </div>
+    <div class="collab-card">
+      <div class="collab-avatar"><img src="collab/anurag-rishi.jpg" alt="Anurag Rishi"></div>
+      <div class="collab-info">
+        <div class="collab-name">Anurag Rishi</div>
+        <div class="collab-role">Financial Advisor / Business & Shine</div>
       </div>
     </div>
   </div>
@@ -241,18 +229,15 @@
     <h2 class="section-title">TOOLS &<br>PLATFORMS</h2>
   </div>
   <div class="tools-grid reveal">
-    <div class="tool-pill"><span class="tool-dot"></span>Final Cut Pro</div>
-    <div class="tool-pill"><span class="tool-dot"></span>Premiere Pro</div>
-    <div class="tool-pill"><span class="tool-dot"></span>DaVinci Resolve</div>
-    <div class="tool-pill"><span class="tool-dot"></span>After Effects</div>
-    <div class="tool-pill"><span class="tool-dot"></span>TamilIM</div>
-    <div class="tool-pill"><span class="tool-dot"></span>YouTube Studio</div>
-    <div class="tool-pill"><span class="tool-dot"></span>Instagram</div>
-    <div class="tool-pill"><span class="tool-dot"></span>CapCut</div>
-    <div class="tool-pill"><span class="tool-dot"></span>Canva Pro</div>
-    <div class="tool-pill"><span class="tool-dot"></span>Audition</div>
-    <div class="tool-pill"><span class="tool-dot"></span>Meta Business Suite</div>
-    <div class="tool-pill"><span class="tool-dot"></span>Content Scheduling</div>
+    <img src="tools/fcp logo Background Removed.png" alt="Final Cut Pro" class="tool-icon">
+    <img src="tools/d vinci logo Background Removed.png" alt="DaVinci Resolve" class="tool-icon">
+    <img src="tools/pr logo Background Removed.png" alt="Premiere Pro" class="tool-icon">
+    <img src="tools/ps logo Background Removed.png" alt="Photoshop" class="tool-icon">
+    <img src="tools/cap logo Background Removed.png" alt="CapCut" class="tool-icon">
+    <img src="tools/insta logo Background Removed.png" alt="Instagram" class="tool-icon">
+    <img src="tools/yt s lgo.png" alt="YouTube Studio" class="tool-icon">
+    <img src="tools/yt lgoo Background Removed.png" alt="YouTube" class="tool-icon">
+    <img src="tools/fb logo Background Removed.png" alt="Facebook" class="tool-icon">
   </div>
 </section>
 
