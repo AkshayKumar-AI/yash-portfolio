@@ -182,14 +182,25 @@ nav {
 .hero-visual {
   position: absolute; inset: 0;
   display: flex; align-items: center; justify-content: center;
+  padding: 2rem;
   z-index: 1;
+}
+.hero-photo {
+  width: min(100%, 420px);
+  max-height: 80vh;
+  object-fit: cover;
+  border-radius: 2rem;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 .play-ring {
   width: 160px; height: 160px;
   border: 1px solid rgba(184,151,90,0.3);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  position: relative;
+  position: absolute;
+  bottom: 2.5rem;
+  right: 2.5rem;
   animation: spin 20s linear infinite;
 }
 .play-ring::before, .play-ring::after {
