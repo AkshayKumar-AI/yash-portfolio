@@ -52,7 +52,7 @@ const statObs = new IntersectionObserver(entries => {
       const el = e.target;
       const txt = el.textContent;
       if (txt.includes('400')) animCount(el, 400, '+');
-      else if (txt.includes('2+')) animCount(el, 2, '+');
+      else if (txt.includes('4+')) animCount(el, 4, '+');
       else if (txt.includes('100')) animCount(el, 100, '+');
       statObs.unobserve(el);
     }
@@ -114,17 +114,5 @@ async function submitContactForm() {
 window.submitContactForm = submitContactForm;
 
 /* ── VIDEO GALLERY ── */
-const featuredVideo = document.getElementById('featuredVideo');
-const featuredSource = document.getElementById('featuredSource');
-const videoThumbs = document.querySelectorAll('.video-thumb');
+console.log('✓ Video gallery loaded - 7 videos with external links');
 
-videoThumbs.forEach(button => {
-  button.addEventListener('click', () => {
-    videoThumbs.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-    featuredSource.src = button.dataset.src;
-    featuredSource.type = button.dataset.type;
-    featuredVideo.load();
-    featuredVideo.play().catch(() => {});
-  });
-});
