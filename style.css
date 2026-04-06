@@ -206,15 +206,6 @@ nav {
   transform: translateY(-15%);
   margin-top: -60px;
 }
-.hero-photo::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(45deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 50%, rgba(255,215,0,0.1) 100%);
-  border-radius: 2rem;
-  pointer-events: none;
-  z-index: 1;
-}
 .play-ring {
   width: 160px; height: 160px;
   border: 1px solid rgba(184,151,90,0.3);
