@@ -203,7 +203,6 @@ nav {
   box-shadow: 0 40px 90px rgba(0, 0, 0, 0.45);
   position: relative;
   z-index: 1;
-  filter: grayscale(100%);
   transform: translateY(-15%);
   margin-top: -60px;
 }
