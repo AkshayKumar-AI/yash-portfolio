@@ -60,21 +60,21 @@ const statObs = new IntersectionObserver(entries => {
 }, { threshold: 0.5 });
 statNums.forEach(n => statObs.observe(n));
 
-/* ── CONTACT FORM → N8N WEBHOOK ── */
-const WEBHOOK_URL = 'https://n8n.srv965659.hstgr.cloud/webhook-test/df5030e2-c06a-4503-9841-72e34146baee';
+/* ── CONTACT FORM → EMAIL API ── */
 
 async function submitContactForm() {
   const name    = document.getElementById('cf-name').value.trim();
   const email   = document.getElementById('cf-email').value.trim();
+  const number  = document.getElementById('cf-number').value.trim();
   const project = document.getElementById('cf-project').value.trim();
   const message = document.getElementById('cf-message').value.trim();
   const btn     = document.getElementById('cf-submit');
   const status  = document.getElementById('cf-status');
 
-  if (!name || !email || !message) {
+  if (!name || !email || !number || !message) {
     status.style.display = 'block';
     status.style.color = '#ff5c3a';
-    status.textContent = 'Please fill in your name, email, and message.';
+    status.textContent = 'Please fill in all required fields.';
     return;
   }
 
@@ -83,28 +83,35 @@ async function submitContactForm() {
   status.style.display = 'none';
 
   try {
-    const res = await fetch(WEBHOOK_URL, {
+    const res = await fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, project_type: project, message })
+      body: JSON.stringify({ name, email, number, project_type: project, message })
     });
+
+    const data = await res.json();
 
     if (res.ok) {
       status.style.display = 'block';
       status.style.color = 'var(--accent)';
-      status.textContent = '✓ Message sent! Yash will get back to you soon.';
+      status.textContent = '✓ Message sent! Check your email for confirmation.';
       document.getElementById('cf-name').value    = '';
       document.getElementById('cf-email').value   = '';
+      document.getElementById('cf-number').value  = '';
       document.getElementById('cf-project').value = '';
       document.getElementById('cf-message').value = '';
       btn.textContent = 'Sent ✓';
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.textContent = 'Send Message →';
+      }, 3000);
     } else {
-      throw new Error('Server responded with ' + res.status);
+      throw new Error(data.message || 'Failed to send message');
     }
   } catch (e) {
     status.style.display = 'block';
     status.style.color = '#ff5c3a';
-    status.textContent = 'Something went wrong. Please try again.';
+    status.textContent = e.message || 'Something went wrong. Please try again.';
     btn.disabled = false;
     btn.textContent = 'Send Message →';
   }
